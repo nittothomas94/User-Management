@@ -24,7 +24,7 @@ const EditUser = () => {
   const { id } = useParams();
 
   const getUserByID = async () => {
-    const response = await axios.get('http://localhost:3000/api/users/' + id);
+    const response = await axios.get('https://user-management-backend-2vr7.onrender.com/api/users/' + id);
     setUser(response.data);
   };
 
@@ -40,7 +40,7 @@ const EditUser = () => {
 
   const onEditUserClick = async () => {
     const response = await axios.patch(
-      'http://localhost:3000/api/users/' + id,
+      'https://user-management-backend-2vr7.onrender.com/api/users/' + id,
       user
     );
     navigate('/');
