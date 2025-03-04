@@ -1,0 +1,23 @@
+.navbar-container {
+  height: 100px;
+  background-color: #003032;
+  display: flex;
+  align-items: center;
+  padding-left: 8%;
+}
+
+.navbar-container h1 {
+  font-size: 30px;
+  color: white;
+  font-weight: bolder;
+}
+
+@media (max-width: 450px) {
+  .navbar-container {
+    /* align-items: start; */
+    padding-left: 20px;
+  }
+  .navbar-container h1 {
+    font-size: 25px;
+  }
+}

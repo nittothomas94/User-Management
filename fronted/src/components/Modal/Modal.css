@@ -1,0 +1,68 @@
+.cover {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: black;
+  opacity: 0.6;
+  z-index: 2;
+}
+.modal-box {
+  position: absolute;
+  width: 50%;
+  height: 200px;
+  margin: 10% 25%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 900;
+  color: red;
+  z-index: 3;
+}
+
+.input-controlls {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.input-controlls .yes-no {
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+}
+
+.input-controlls .yes-no.no {
+  background-color: green;
+}
+
+.input-controlls .yes-no.yes {
+  background-color: red;
+}
+
+@media (max-width: 1024px) {
+  .modal-box {
+    width: 60%;
+    height: 250px;
+    margin: 30% 18%;
+    padding: 20px;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  .modal-box {
+    width: 300px;
+    height: 220px;
+    margin: 40% 15%;
+    font-size: 25px;
+    padding: 10px;
+  }
+}

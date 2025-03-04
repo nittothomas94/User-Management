@@ -1,0 +1,85 @@
+.editUser-container {
+  padding: 2% 10%;
+  height: 86vh;
+  background-color: #f3f5f7;
+  position: relative;
+}
+
+.edit-user {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  /* box-shadow: 0px 0px 2px 1px gray; */
+}
+
+.edit-user .input-edituser {
+  width: 300px;
+  height: 30px;
+}
+
+.edit-page-buttons {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  bottom: 10vh;
+  right: 10%;
+}
+
+.edit-page-buttons .cancel {
+  background-color: #003032;
+}
+
+.edit-page-buttons .update {
+  background-color: #219e30;
+}
+
+.edit-page-buttons .update,
+.cancel {
+  width: 100px;
+  height: 35px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button-edituser:hover {
+  transform: scale(1.1);
+}
+
+.button-edituser:active {
+  transform: scale(0.9);
+}
+
+@media (max-width: 1024px) {
+  .editUser-container {
+    padding: 20px;
+    height: 91vh;
+  }
+
+  .edit-user {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+
+  .editUserButtons {
+    right: 30px;
+    bottom: 25vh;
+  }
+}
+
+@media (max-width: 450px) {
+  .editUser-container h1 {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .edit-user {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 20px;
+  }
+}

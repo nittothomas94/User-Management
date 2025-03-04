@@ -1,0 +1,281 @@
+.home-container {
+  background-color: #e3e3e3;
+  width: 100%;
+  min-height: 86vh;
+  padding: 10px 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Top Section Main Heading */
+.userMagement-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 1px solid black; */
+  background-color: white;
+  padding: 10px;
+}
+
+.search-adduser {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-input-div {
+  width: 300px;
+  height: 30px;
+  border: 1px solid black;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  height: 30px;
+  padding-left: 12%;
+  margin-top: -5px;
+}
+
+.search-input-div .ok-button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  padding: 2px 15px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.search-input-div .ok-button:active {
+  transform: scale(0.9);
+}
+
+.search-input-div .search-icon {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+
+.search-adduser .add-user-button {
+  width: 110px;
+  height: 30px;
+  background-color: rgb(16, 112, 117);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.search-adduser .add-user-button:hover {
+  background-color: rgb(139, 138, 138);
+  color: white;
+}
+.search-adduser .add-user-button:active {
+  transform: scale(0.9);
+}
+
+/* Bottom Section */
+.users-div {
+  min-height: 72vh;
+}
+
+.users-div-headings {
+  width: 100%;
+  /* border: 1px solid red; */
+  background-color: rgb(254, 254, 254);
+  padding: 20px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.3fr 0.7fr 1.5fr;
+  align-items: center;
+  padding-left: 45px;
+}
+
+.users-div-headings h1 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* bottom section body part */
+.users-div-userslists {
+  width: 100%;
+  background-color: rgb(230, 230, 230);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.users-div-userslists .card {
+  width: 100%;
+  height: 100px;
+  display: grid;
+  background-color: white;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1.3fr 0.7fr 1.5fr;
+}
+
+.users-div-userslists .card:hover {
+  box-shadow: 0px 0px 2px 1px rgb(143, 142, 142);
+}
+.users-div-userslists .card img {
+  width: 100px;
+  height: 98px;
+  margin-left: 20px;
+  object-fit: contain;
+  /* box-shadow: 0px 0px 1px 1px rgb(209, 209, 209); */
+}
+.users-div-userslists .card p {
+  width: 100px;
+  /* border: 1px solid black; */
+  /* margin-left: 10px; */
+}
+
+.card-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.card-buttons .cardButton {
+  padding: 10px 15px;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  border: none;
+}
+
+.cardButton:active {
+  transform: scale(0.9);
+}
+
+.cardButton.download {
+  background-color: rgb(10, 81, 117);
+}
+.cardButton.update {
+  background-color: rgb(140, 140, 21);
+}
+
+.cardButton.delete {
+  background-color: rgb(200, 2, 2);
+}
+/* PDF  */
+
+.downloadPDF {
+  background-color: rgb(54, 130, 135);
+  padding: 10px 20px;
+  border-radius: 150px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.downloadPDF:active {
+  transform: scale(0.9);
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .home-container {
+    min-height: 92vh;
+    padding: 20px 2px;
+  }
+  .user-mananagement-heading h1 {
+    font-size: 24px;
+  }
+  .search-adduser {
+    gap: 10px;
+  }
+
+  .search-input-div {
+    width: 200px;
+    height: 30px;
+  }
+
+  .search-adduser .add-user-button {
+    width: 80px;
+  }
+
+  .users-div-userslists {
+    background-color: white;
+  }
+
+  .users-div-userslists .card {
+    box-shadow: 0px 0px 2px 1px black;
+    grid-template-columns: 1fr 1fr 1.3fr 1fr 1fr;
+  }
+
+  .users-div-userslists .card p {
+    font-size: 12px;
+    padding-left: 40px;
+  }
+
+  .card-buttons .cardButton {
+    padding: 10px 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 0px;
+  }
+}
+
+/* Mobile devices (Screen width up to 450px) */
+@media (max-width: 450px) {
+  .home-container {
+    background-color: white;
+  }
+  .user-mananagement-heading h1 {
+    font-size: 20px;
+  }
+
+  .search-adduser .search-input-div {
+    display: none;
+  }
+
+  .users-div {
+    background-color: white;
+    padding: 10px;
+    box-shadow: none;
+  }
+
+  .users-div-headings {
+    display: none;
+  }
+
+  .users-div-userslists {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background-color: white;
+  }
+
+  .users-div-userslists .card {
+    width: 100%;
+    height: 230px;
+    box-shadow: 0px 0px 10px 1px gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+  }
+
+  .users-div-userslists .card img {
+    width: 100px;
+    height: 100px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+  }
+
+  .users-div-userslists .card p {
+    padding: 0px;
+  }
+
+  .card-buttons {
+    gap: 5px;
+    margin-top: 5px;
+  }
+
+  .card-buttons .cardButton {
+    padding: 5px 3px;
+    border-radius: 0px;
+  }
+}
