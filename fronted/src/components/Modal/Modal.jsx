@@ -1,4 +1,4 @@
-import './modal.css';
+import './Modal.css';
 import Button from '../Button/button';
 
 const Modal = ({ show, YseDelete, coverClick }) => {
