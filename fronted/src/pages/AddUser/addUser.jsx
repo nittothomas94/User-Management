@@ -56,8 +56,7 @@ const AddUser = () => {
   console.log(user);
 
   const onAddUserClick = async () => {
-    const response = await axios.post('https://user-management-backend-2vr7.onrender.com/api/users', user
-                                     ,{ timeout: 10000 });
+    const response = await axios.post('https://user-management-backend-2vr7.onrender.com/api/users', user,{ timeout: 10000 });
     navigate('/');
   };
 
