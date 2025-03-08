@@ -6,8 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { jsPDF } from 'jspdf';
-import html2canvas from 'html2canvas';
+// import html2canvas from 'html2canvas';
 import Modal from '../../components/Modal/Modal';
+import CardSkelton from '../../components/CardSkelton/cardSkelton';
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -15,14 +16,18 @@ const Home = () => {
   const [ShowDeleteModal, setDeleteModal] = useState(false);
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [name, setName] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getAllUsers();
   }, []);
 
   const getAllUsers = async () => {
-    const response = await axios.get('https://user-management-backend-2vr7.onrender.com/api/users');
+    const response = await axios.get(
+      'https://user-management-backend-2vr7.onrender.com/api/users'
+    );
     setUsers(response.data);
+    setLoading(false);
   };
 
   console.log(users);
@@ -96,8 +101,9 @@ const Home = () => {
   };
 
   const onDeleteUser = async () => {
-    const response = await axios.delete(
-      'https://user-management-backend-2vr7.onrender.com/api/users/' + selectedUserId
+    await axios.delete(
+      'https://user-management-backend-2vr7.onrender.com/api/users/' +
+        selectedUserId
     );
     getAllUsers();
     setDeleteModal(false);
@@ -168,34 +174,36 @@ const Home = () => {
             <h1>Operations</h1>
           </div>
           <div className="users-div-userslists">
-            {users.map(item => {
-              return (
-                <div className="card">
-                  <img src={item.image} alt=" Uaer Image" />
-                  <p>{item.name}</p>
-                  <p>{item.email}</p>
-                  <p>{item.age}</p>
+            {loading
+              ? [1, 2, 3].map((item, index) => <CardSkelton key={index} />)
+              : users.map((item, index) => {
+                  return (
+                    <div className="card" key={index}>
+                      <img src={item.image} alt=" Uaer Image" />
+                      <p>{item.name}</p>
+                      <p>{item.email}</p>
+                      <p>{item.age}</p>
 
-                  <div className="card-buttons">
-                    <Button
-                      content="Download"
-                      className="cardButton download"
-                      onClick={() => onDownloadClick(item)}
-                    />
-                    <Button
-                      content="Edit"
-                      className="cardButton update"
-                      onClick={() => onEditClick(item._id)}
-                    />{' '}
-                    <Button
-                      content="Delete"
-                      className="cardButton delete"
-                      onClick={() => onDeleteClick(item._id)}
-                    />
-                  </div>
-                </div>
-              );
-            })}
+                      <div className="card-buttons">
+                        <Button
+                          content="Download"
+                          className="cardButton download"
+                          onClick={() => onDownloadClick(item)}
+                        />
+                        <Button
+                          content="Edit"
+                          className="cardButton update"
+                          onClick={() => onEditClick(item._id)}
+                        />{' '}
+                        <Button
+                          content="Delete"
+                          className="cardButton delete"
+                          onClick={() => onDeleteClick(item._id)}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
           </div>
         </div>
       </div>
